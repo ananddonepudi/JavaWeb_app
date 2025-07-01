@@ -17,9 +17,11 @@ sudo useradd -M -s /bin/nologin -g tomcat -d /opt/tomcat tomcat
 sudo mkdir /opt/tomcat
 cd /opt/tomcat
 
-sudo wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.87/bin/apache-tomcat-9.0.87.tar.gz
-sudo tar xvf apache-tomcat-9.0.87.tar.gz --strip-components=1
-sudo rm apache-tomcat-9.0.87.tar.gz
+curl -s https://downloads.apache.org/tomcat/tomcat-9/ | grep v9
+#use the latest version 
+sudo wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.105/bin/apache-tomcat-9.0.105.tar.gz
+sudo tar xvf apache-tomcat-9.0.105.tar.gz --strip-components=1
+sudo rm apache-tomcat-9.0.105.tar.gz
 
 # Set permissions
 sudo chown -R tomcat:tomcat /opt/tomcat
